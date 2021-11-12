@@ -1,4 +1,4 @@
-{{-- @extends('layouts.backend.index') --}}
+{{-- @extends('layouts.backend.index')--}}
 @section('content')
 <div class="page-header">
   <h1 class="page-title">Dashboard</h1>
@@ -6,9 +6,9 @@
 <div class="page-content container-fluid">
     <div class="row">
     <div class="col-md-4">
-          <!-- Card -->
+          <!-- Card Student-->
           <div class="card  card-block p-30 bg-red-600">
-            <div class="card-watermark darker font-size-80 m-15"><i class="fa fa-chalkboard" aria-hidden="true"></i></div>
+            <div class="card-watermark darker font-size-80 m-15"><i class="fas fa-user-graduate" aria-hidden="true"></i></div>
             <div class="counter counter-md counter-inverse text-left">
               <div class="counter-number-group">
                 {{-- <span class="counter-number">{{ $metrics['students'] }}</span> --}}
@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-md-4">
-          <!-- Card -->
+          <!-- Card Instructor-->
           <div class="card card-block p-30 bg-blue-600">
             <div class="card-watermark darker font-size-80 m-15"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
             <div class="counter counter-md counter-inverse text-left">
@@ -36,13 +36,58 @@
         </div>
 
         <div class="col-md-4">
-          <!-- Card -->
+          <!-- Card Course-->
           <div class="card card-block p-30 bg-green-600">
             <div class="card-watermark darker font-size-60 m-15"><i class="far fa-play-circle" aria-hidden="true"></i></div>
             <div class="counter counter-md counter-inverse text-left">
               <div class="counter-number-group">
-                {{-- <span class="counter-number">{{ $metrics['courses'] }}</span> --}}
+                {{-- {{-- <span class="counter-number">{{ $metrics['courses'] }}</span> --}}
                 <span class="counter-number-related text-capitalize">courses</span>
+              </div>
+              <div class="counter-label text-capitalize">in total</div>
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col-md-4">
+          <!-- Card Free Quiz-->
+          <div class="card card-block p-30 bg-info -600">
+            <div class="card-watermark darker font-size-60 m-15"><i class="far fa-question-circle" aria-hidden="true"></i></div>
+            <div class="counter counter-md counter-inverse text-left">
+              <div class="counter-number-group">
+                {{-- <span class="counter-number">{{ $metrics['courses'] }}</span> --}}
+                <span class="counter-number-related text-capitalize">Free Quiz</span>
+              </div>
+              <div class="counter-label text-capitalize">in total</div>
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col-md-4">
+          <!-- Card Classic Quiz-->
+          <div class="card card-block p-30 bg-warning -600">
+            <div class="card-watermark darker font-size-60 m-15"><i class="fas fa-question-circle" aria-hidden="true"></i></div>
+            <div class="counter counter-md counter-inverse text-left">
+              <div class="counter-number-group">
+                {{-- <span class="counter-number">{{ $metrics['courses'] }}</span> --}}
+                <span class="counter-number-related text-capitalize">Classic Quiz</span>
+              </div>
+              <div class="counter-label text-capitalize">in total</div>
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+ 
+        <div class="col-md-4">
+          <!-- Card Enroll Quiz-->
+          <div class="card card-block p-30 bg-danger -600">
+            <div class="card-watermark darker font-size-60 m-15"><i class="fas fa-question-circle" aria-hidden="true"></i></div>
+            <div class="counter counter-md counter-inverse text-left">
+              <div class="counter-number-group">
+                {{-- <span class="counter-number">{{ $metrics['courses'] }}</span> --}}
+                <span class="counter-number-related text-capitalize">Enroll Quiz</span>
               </div>
               <div class="counter-label text-capitalize">in total</div>
             </div>

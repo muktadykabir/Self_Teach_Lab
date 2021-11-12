@@ -1,3 +1,0 @@
-<div>
-    Checkout page 
-</div>

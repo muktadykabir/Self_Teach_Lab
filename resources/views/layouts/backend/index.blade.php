@@ -12,7 +12,7 @@
   <title>Self_Teach_Lab</title>
 
   <link rel="apple-touch-icon" href="{{ asset('backend/assets/images/apple-touch-icon.png') }}">
-  {{-- <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico ') }}"> --}}
+  <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico ') }}">
   <link rel="shortcut icon" href="{{asset('asset/images/logo/icon2.png')}}" type="image/png">
 
   <!-- Stylesheets -->
@@ -90,8 +90,6 @@
             <div class="dropdown-menu" role="menu">
               <a class="dropdown-item" href="{{ url('/') }}" role="menuitem"><i class="icon fas fa-home" aria-hidden="true"></i> Home Page</a>
               <div class="dropdown-divider" role="presentation"></div>
-              {{-- <a class="dropdown-item" href="{{ route('logout')}}"><i class="icon wb-power" aria-hidden="true"></i> Logout</a> --}}
-              {{-- <a href="{{route('logout')}}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a> --}}
               <a class="dropdown-item" href="{{route('logout')}}"onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="icon wb-power" aria-hidden="true"></i>Logout</a>
               <form id="logout-form" method="POST" action="{{route('logout')}}">
                   @csrf   
@@ -122,11 +120,13 @@
   </nav>
   <div class="site-menubar">
 
-    {{-- @if(Auth::user()->hasRole('admin'))
-        @include('layouts/backend/admin_sidebar')
-    @elseif(Auth::user()->hasRole('instructor'))
-        @include('layouts/backend/instructor_sidebar')
-    @endif --}}
+    @if(Auth::user()->utype==='ADM')
+        @include('layouts.backend.admin_sidebar');
+    @elseif(Auth::user()->utype==='instructor')
+        @include('layouts.backend.instructor_sidebar');
+    @elseif(Auth::user()->utype==='quizmaster')
+        @include('layouts/backend/quizDashboard_sidebar');
+    @endif
   </div>
   
   <!-- Page -->
@@ -140,7 +140,6 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="site-footer-legal">© {{ date('Y') }} <a href="javascript:void(0)">Self_Teach_Lab</a></div>
-  {{-- {{$slot}} --}}
   </footer>
   <!-- Core  -->
   <script src="{{ asset('backend/vendor/babel-external-helpers/babel-external-helpers599c.js?v4.0.2') }}"></script>

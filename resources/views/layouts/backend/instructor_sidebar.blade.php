@@ -8,14 +8,14 @@
                 <span class="site-menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="site-menu-item {{ request()->is('instructor-profile') ? 'active' : '' }}">
-            <a href="{{ route('instructor.profile.get') }}">
+        <li class="site-menu-item {{ request()->is('profile') ? 'active' : '' }}">
+            <a href="{{ route('instructor.profile') }}">
                 <i class="site-menu-icon fas fa-user" aria-hidden="true"></i>
                 <span class="site-menu-title">Profile</span>
             </a>
         </li>
         <li class="site-menu-item {{ request()->is('instructor-course-*') ? 'active' : '' }}">
-            <a href="{{ route('instructor.course.list') }}">
+            <a href="{{ route('instructor.courselist') }}">
                 <i class="site-menu-icon fas fa-chalkboard" aria-hidden="true"></i>
                 <span class="site-menu-title">Courses</span>
             </a>
@@ -27,7 +27,7 @@
             </a>
         </li>
         <li class="site-menu-item {{ request()->is('instructor-withdraw-requests') ? 'active' : '' }}">
-            <a href="{{ route('instructor.list.withdraw') }}">
+            <a href="{{ route('instructor.withdraw') }}">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                 <span class="site-menu-title">Withdraw Requests</span>
             </a>

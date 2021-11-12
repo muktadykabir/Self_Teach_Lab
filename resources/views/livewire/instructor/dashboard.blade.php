@@ -1,4 +1,4 @@
-@extends('layouts.backend.index')
+{{-- @extends('layouts.backend.index') --}}
 @section('content')
 <div class="page-header">
   <h1 class="page-title">Dashboard</h1>
@@ -11,7 +11,7 @@
             <div class="card-watermark darker font-size-80 m-15"><i class="fa fa-chalkboard" aria-hidden="true"></i></div>
             <div class="counter counter-md counter-inverse text-left">
               <div class="counter-number-group">
-                <span class="counter-number">{{ $metrics['courses'] }}</span>
+                {{-- <span class="counter-number">{{ $metrics['courses'] }}</span> --}}
                 <span class="counter-number-related text-capitalize">courses</span>
               </div>
               <div class="counter-label text-capitalize">in total</div>
@@ -26,7 +26,7 @@
             <div class="card-watermark darker font-size-80 m-15"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
             <div class="counter counter-md counter-inverse text-left">
               <div class="counter-number-group">
-                <span class="counter-number">{{ $metrics['lectures'] }}</span>
+                {{-- <span class="counter-number">{{ $metrics['lectures'] }}</span> --}}
                 <span class="counter-number-related text-capitalize">lectures</span>
               </div>
               <div class="counter-label text-capitalize">in total</div>
@@ -41,7 +41,7 @@
             <div class="card-watermark darker font-size-60 m-15"><i class="far fa-play-circle" aria-hidden="true"></i></div>
             <div class="counter counter-md counter-inverse text-left">
               <div class="counter-number-group">
-                <span class="counter-number">{{ $metrics['videos'] }}</span>
+                {{-- <span class="counter-number">{{ $metrics['videos'] }}</span> --}}
                 <span class="counter-number-related text-capitalize">videos</span>
               </div>
               <div class="counter-label text-capitalize">in total</div>
@@ -70,7 +70,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($courses as $course)
+                    {{-- @foreach($courses as $course)
                     <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $course->course_title }}</td>
@@ -83,9 +83,9 @@
                         @else
                         <span class="badge badge-danger">Inactive</span>
                         @endif
-                    </td>
+                    </td> 
                     </tr>
-                    @endforeach
+                    @endforeach--}}
                 </tbody>
             </table>
         </div>

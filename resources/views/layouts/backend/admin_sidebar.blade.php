@@ -3,7 +3,7 @@
     <div>
       <ul class="site-menu" data-plugin="menu">
         <!-- <li class="site-menu-category">General</li> -->
-        <li class="site-menu-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+        <li class="site-menu-item {{ request()->is('ADM') ? 'active' : '' }}">
             <a href="{{ route('admin.dashboard') }}">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                 <span class="site-menu-title">Dashboard</span>
@@ -21,8 +21,8 @@
                 <span class="site-menu-title">Categories</span>
             </a>
         </li>
-        <li class="site-menu-item {{ request()->is('admin/withdraw-requests') ? 'active' : '' }}">
-            <a href="{{ route('admin.withdraw.requests') }}">
+        <li class="site-menu-item {{ request()->is('admin/admin-withdraw-requests') ? 'active' : '' }}">
+            <a href="{{ route('admin.withdraw-requests') }}">
                 <i class="site-menu-icon fas fa-hand-holding-usd" aria-hidden="true"></i>
                 <span class="site-menu-title">Withdraw Requests</span>
             </a>

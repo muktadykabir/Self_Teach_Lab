@@ -393,6 +393,7 @@ p {
 /*=====================================================
     2. HEADER css 
 ======================================================*/
+/* =========== Header Course ============ */
 
 
 /*===== Header top =====*/
@@ -470,7 +471,7 @@ p {
 /*===== Header Menu =====*/
 
 .navigation{
-    background-color: #36373ad3;
+    background-color: #24292ced;
 }
 
 .navigation.sticky {
@@ -478,11 +479,11 @@ p {
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: #424242;
+	background: #044252c5;
 	z-index: 999;
-    border-bottom: 1px solid #cecece;
-    -webkit-box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
-    box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
+    border-bottom: 1px solid #f5040436;
+    -webkit-box-shadow: 0px 0px 191px 0px rgba(255, 1, 1, 0.185);
+    box-shadow: 0px 0px 191px 0px rgba(148, 189, 12, 0.897);
     -webkit-animation: sticky 2s;
     animation: sticky 2s;
 }
@@ -542,7 +543,7 @@ p {
     position: absolute;
     top: 110%;
     left: 0;
-    background-color: #07294d;
+    background-color: #eef1f5;
     width: 200px;
     opacity: 0;
     visibility: hidden;
@@ -583,13 +584,13 @@ p {
 	padding: 3px 8px;
 	margin: 18px 0;
      -webkit-transform: all 0.4s linear;
-    transform: all 0.4s linear;
+    transform: all 0.3s linear;
 }
 
 .navbar .navbar-toggler .icon-bar {
 	width: 30px;
 	height: 2px;
-	background-color: #07294d;
+	background-color: #f9f9fa;
 	display: block;
 	margin: 5px 0;
     position: relative;
@@ -637,71 +638,6 @@ p {
     top: -5px;
     right: 0;
 }
-
-/*===== Index-2 =====*/
-
-.header-social ul li{
-    display: inline-block;
-    margin-left: 10px;
-}
-.header-social ul li:first-child{
-    margin-left: 0;
-}
-
-.header-social ul li a{
-    font-size: 15px;
-    color: #dee2e6;
-}
-
-.navigation-2 .navbar .navbar-nav li{
-    margin-right: 40px;
-}
-
-.navigation-2 .navbar .navbar-nav li a{
-	padding: 45px 0;
-}
-.navigation-2 .right-icon ul li {
-	padding: 42px 0;
-}
-.navigation-2.sticky .navbar .navbar-nav li a{
-    padding: 30px 0;
-}
-.navigation-2.sticky .right-icon ul li{
-    padding: 25px 0;
-}
-
-/*===== Index-3 =====*/
-
-.navigation-3{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: none;
-    z-index: 99;
-}
-
-.navigation-3 .navbar .navbar-nav li a,
-.navigation-3 .right-icon ul li a{
-    color: #fff;
-}
-
-.navigation-3.sticky .navbar .navbar-nav li a,
-.navigation-3.sticky .right-icon ul li a{
-    color: #07294d;
-}
-.navigation-3.sticky .navbar .navbar-nav > li > a.active,
-.navigation-3.sticky .navbar .navbar-nav > li > a:hover{
-    color: #ffc600;
-}
-
-.navigation-3 .navbar .navbar-toggler .icon-bar{
-    background-color: #fff;
-}
-.navigation-3.sticky .navbar .navbar-toggler .icon-bar{
-    background-color: #07294d;
-}
-
 
 
 /*===== SEARCH BOX =====*/
@@ -777,7 +713,19 @@ p {
 ======================================================*/
 
 .single-slider{
-    padding-bottom: 300px;
+    /* padding-top: 100px; */
+    height:35rem;
+    /* background:rgb(6, 157, 245); */
+    /* colrgb(22, 14, 14)22); */
+    /* position: relative; */
+    position:absolute;
+    bottom:0;
+    left:0;
+    right: 0;
+    top:0;
+    background-position: center;
+    background-size: cover;
+    opacity:1;
 }
 
 .slider-cont{
@@ -785,11 +733,11 @@ p {
     z-index: 5;
 }
 .slider-cont h1{
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #fff;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 .slider-cont p{
     font-size: 18px;
@@ -799,8 +747,8 @@ p {
 }
 .slider-cont ul {}
 .slider-cont ul li{
-    display: inline-block;
-    margin-right: 15px;
+    display:initial;
+    margin-left: 15px;
 }
 .slider-cont ul li:last-child{
     margin-right: 0;
@@ -833,16 +781,6 @@ p {
 .slider-active:hover .next.slick-arrow {
     left: auto;
     right: 30px;
-}
-
-/*===== Index-2 =====*/
-
-.slider-2 .slider-cont h1 {
-	padding-bottom: 40px;
-}
-.slider-2.single-slider{
-    padding-top: 230px;
-    padding-bottom: 250px;
 }
 
 /*===== Index-3 =====*/

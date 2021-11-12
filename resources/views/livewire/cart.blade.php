@@ -1,3 +1,0 @@
-<div>
-   Cart Page
-</div>

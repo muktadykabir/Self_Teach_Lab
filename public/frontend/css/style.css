@@ -20,12 +20,12 @@ if it's not present, don't show loader */
 }
 
 .navbar-default {
-    background: #fff;
-    height: 60px;
+    background: rgb(56, 59, 63);
+    height: 80px;
 }
 @media  (max-width: 768px) {
 .navbar-default {
-    /*background: #fafafa;*/
+    background: #003e62;
 }
 }
 .about-ul >li{
@@ -48,7 +48,7 @@ if it's not present, don't show loader */
 .mobile-nav{
     margin-top: 5px;
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 10px;
     cursor: pointer;
 }
 #sidebar{
@@ -77,19 +77,34 @@ if it's not present, don't show loader */
 }
 
 #logo{
-    margin-bottom: 10px;
+    margin-top: -15px;
+    float:left;
+}
+.col-sm
+{
+    margin-top: 15px;
 }
 
+
+/* ================================================== */
 .btn-learna{
     display: inline-block;
-    border-radius: 3px;
-    color: #414146;
-    border: 1px solid #414146;
+    border-radius: 8px;
+    color: #fffb0a;
+    border: 2px solid #f30404;
     background-color: transparent;
     padding: 4px 16px;
     font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
-.btn-learna:hover{background-color:transparent;border:1px solid #14bef0;color:#14bef0 !important}
+.btn-learna:hover
+{
+    background-color:transparent;
+    border:1px solid #08f687;
+    font-weight: 800;
+    color:#f3dc0a !important
+}
 
 .btn-ulearn, .btn-ulearn:hover{
     color: #fff;
@@ -136,8 +151,19 @@ h1{
     font-weight: 700;
 }
 button{border:none;cursor:pointer;}
-a{color:#428bca;text-decoration:none;}
-a:hover,a:focus{color:#2a6496;text-decoration:underline;}
+a{
+    margin-bottom: -20px;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight: 400;
+    
+}
+a:hover,a:focus
+{
+    color:#0beaf1;
+    text-decoration:underline;
+    font-weight: bold;
+}
 a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
 ul{margin-top:0;margin-bottom:5px;list-style-type:none;}
 nav.secondary-nav{display:block;text-align:center;clear:both;margin:10px;border-bottom: none !important;padding: 0.5rem 1rem !important;position: relative;}
@@ -209,7 +235,7 @@ nav.secondary-nav ul li a.active{color:#14bef0;font-weight:bold;}
 }
 
 .home-content{
-    margin-top: 60px;
+    margin-top: 80px;
 }
 .clearfix:before,.clearfix:after{display:table;content:" ";}
 .clearfix:after{clear:both;}
@@ -219,8 +245,9 @@ nav.secondary-nav ul li a.active{color:#14bef0;font-weight:bold;}
 }
 
 .homepage-slide-blue {
+    top:0;
     color: #fff;
-    background-color: #28328c;
+    background-color: #0b597e;
     height: 300px;
     position: relative;
     text-align: center;

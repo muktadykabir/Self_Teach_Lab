@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class instruction_levels extends Model
 {
     use HasFactory;
+    protected $table = 'instruction_levels';
+    public $timestamps = false;
+    protected $guarded = array();
 }

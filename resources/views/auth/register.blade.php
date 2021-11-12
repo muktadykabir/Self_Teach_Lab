@@ -1,104 +1,159 @@
-{{-- <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.frontend.index')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('content')
+<!-- content start -->
+    <div class="container-fluid p-0 home-content container-top-border">
+        <!-- account block start -->
+        <div class="container">
+            <nav class="navbar clearfix secondary-nav pt-0 pb-0 login-page-seperator">
+                <ul class="list mt-0">
+                     <li><a href="{{ route('login') }}" >Login</a></li>
+                     <li><a href="{{ route('register') }}" class="active">Register</a></li>
+                </ul>
+            </nav>
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 vertical-align d-none d-lg-block">
+                    
+                    <img class="img-fluid" src="{{ asset('frontend/img/fimg1.gif') }}" width="500px" height="500px">
                 </div>
-            @endif
+                <div class="col-xl-6 offset-xl-0 col-lg-6 offset-lg-0 col-md-8 offset-md-2">
+                    <div class="rightRegisterForm">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" id="registerForm">
+                        {{-- {{ csrf_field() }} --}}
+                        @csrf
+                        <div class="p-4">
+                            @if (count($errors) > 0)
+                            @foreach ($errors->all() as $error)
+                                <p class="alert alert-danger alert-dismissible fade show" role="alert">{{ $error }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </p>
+                            @endforeach
+                            @endif
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+                            @if (session()->has('message'))
+                                <p class="alert alert-success alert-dismissible fade show" role="alert">{{ session('message') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </p>
+                            @endif
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control form-control-sm" placeholder="First Name" value="@if(!empty($name)){{ $name }}@else{{ old('first_name') }}@endif" name="first_name"   >
+                                        @if ($errors->has('first_name'))
+                                        <label class="error" for="first_name">{{ $errors->first('first_name') }}</label>
+                                        @endif
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control form-control-sm" placeholder="Last Name" value="{{ old('last_name') }}" name="last_name">
+                                        @if ($errors->has('last_name'))
+                                        <label class="error" for="last_name">{{ $errors->first('last_name') }}</label>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email ID</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Email ID" value="@if(!empty($name)){{ $email }}@else{{ old('email') }}@endif" name="email">
+                                @if ($errors->has('email'))
+                                <label class="error" for="email">{{ $errors->first('email') }}</label>
+                                @endif
+                            </div>
 
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout> --}}
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control form-control-sm" placeholder="Password" name="password" id="password">
+                                @if ($errors->has('password'))
+                                <label class="error" for="password">{{ $errors->first('password') }}</label>
+                                @endif
+                            </div>
 
-<x-guest-layout>
-    <div class="registration-form">
-        <form name="frm-register" method="POST" action="{{route('register')}}">
-            @csrf
-            <div class="form-icon">
-                <img src="asset/images/logo/icon2.png" alt="">
-               <!-- <span><i class="icon icon-user"></i></span>-->
-            </div>
-            <x-jet-validation-errors class="mb-4" />
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control form-control-sm" placeholder="Confirm Password" name="password_confirmation">
+                                @if ($errors->has('password_confirmation'))
+                                <label class="error" for="password_confirmation">{{ $errors->first('password_confirmation') }}</label>
+                                @endif
+                            </div>
 
-            <div class="form-group">
-                <input type="text" id="name" name="name" class="form-control item"  placeholder="Your Name" :value="old('name')" required autofocus autocomplete="name">
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" class="form-control item"  placeholder="Email" :value="old('email')" required="autofocus">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control item" id="password" name="password" placeholder="Password" required autocomplete="new-password">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control item" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
-            </div>
-            
-            <fieldset class="form-group">
-                <a  href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-            </fieldset>
-            
-            <div class="form-group">
-                <input type="submit"  class="btn btn-block create-account" value="Create Account" name="submit">
-            </div>
-        </form>
-        <div class="social-media">
-            <h5>Login with social media</h5>
-            <div class="social-icons">
-                <a href="#"><i class="fa fa-facebook-f" title="Facebook"></i></a>
-                <a href="#"><i class="fa fa-google" title="Google"></i></a>
-                <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="offer" name="offer" {{ old('offer') ? 'checked' : '' }}>
+                                    <label class="custom-control-label" for="offer">Receive relevant offers & communications</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-lg btn-block login-page-button">Register</button>
+                            </div>
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- account block end -->
     </div>
-</x-guest-layout>
+    <!-- content end -->
+@endsection
+
+@section('javascript')
+<script type="text/javascript">
+$(document).ready(function()
+{
+    $("#registerForm").validate({
+            rules: {
+                first_name: {
+                    required: true
+                },
+                last_name: {
+                    required: true
+                },
+                email:{
+                    required: true,
+                    email:true,
+                    remote: "{{ url('checkUserEmailExists') }}"
+                },
+                password:{
+                    required: true,
+                    minlength: 6
+                },
+                password_confirmation:{
+                    required: true,
+                    equalTo: '#password'
+                }
+            },
+            messages: {
+                first_name: {
+                    required: 'The fname field is required.'
+                },
+                last_name: {
+                    required: 'The lname field is required.'
+                },
+                email: {
+                    required: 'The email field is required.',
+                    email: 'The email must be a valid email address.',
+                    remote: 'The email has already been taken.'
+                },
+                password: {
+                    required: 'The password field is required.',
+                    minlength: 'The password must be at least 6 characters.'
+                },
+                password_confirmation: {
+                    required: 'The password confirmation field is required.',
+                    equalTo: 'The password confirmation does not match.'
+                }
+            }
+        });
+
+});
+</script>
+@endsection
